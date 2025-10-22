@@ -114,12 +114,12 @@ export class AuthService {
       email: user.email
     };
 
-    const token = jwt.sign(payload, config.auth.jwt.secret, { 
-      expiresIn: config.auth.jwt.expiresIn as string
+    const token = jwt.sign(payload, config.auth.jwt.secret, {
+      expiresIn: config.auth.jwt.expiresIn as jwt.SignOptions['expiresIn']
     });
-    
-    const refreshToken = jwt.sign(payload, config.auth.jwt.secret, { 
-      expiresIn: config.auth.jwt.refreshExpiresIn as string
+
+    const refreshToken = jwt.sign(payload, config.auth.jwt.secret, {
+      expiresIn: config.auth.jwt.refreshExpiresIn as jwt.SignOptions['expiresIn']
     });
 
     return { token, refreshToken };

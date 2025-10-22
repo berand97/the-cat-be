@@ -139,7 +139,7 @@ const options: swaggerJsdoc.Options = {
       }
     ]
   },
-  apis: ['./src/presentation/routes/*.ts'], // Path to the API files
+  apis: ['./src/presentation/routes/*.ts'],
 };
 
 const specs = swaggerJsdoc(options);
@@ -151,11 +151,9 @@ export const setupSwagger = (app: Express): void => {
     customSiteTitle: 'Cat Breeds API Documentation'
   }));
 
-  // Serve swagger.json
   app.get('/api-docs.json', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(specs);
   });
 
-  console.log('📚 Swagger documentation available at /api-docs');
 };

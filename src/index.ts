@@ -13,12 +13,12 @@ const startServer = async (): Promise<void> => {
 
     const server = app.listen(config.server.port, config.server.host, () => {
       console.log(`
-        🎉 Server is running successfully!
-        📍 Environment: ${config.server.nodeEnv}
-        🌐 Server: http://${config.server.host}:${config.server.port}
-        📚 API Docs: http://${config.server.host}:${config.server.port}/api-docs
-        🔍 Health Check: http://${config.server.host}:${config.server.port}/health
-        Ready to accept requests! 🐱
+        Server is running successfully!
+        Environment: ${config.server.nodeEnv}
+        Server: http://${config.server.host}:${config.server.port}
+        API Docs: http://${config.server.host}:${config.server.port}/api-docs
+        Health Check: http://${config.server.host}:${config.server.port}/health
+        Ready to accept requests!
       `);
     });
 
