@@ -1,0 +1,40 @@
+import { Document } from 'mongoose';
+import { Weight, Image } from '@core/entities/breed.entity';
+
+export interface IBreedDocument extends Document {
+  breedId: string;
+  name: string;
+  description: string;
+  temperament: string;
+  origin: string;
+  countryCodes: string;
+  countryCode: string;
+  lifeSpan: string;
+  indoor: number;
+  lap: number;
+  altNames?: string;
+  adaptability: number;
+  affectionLevel: number;
+  childFriendly: number;
+  dogFriendly: number;
+  energyLevel: number;
+  grooming: number;
+  healthIssues: number;
+  intelligence: number;
+  sheddingLevel: number;
+  socialNeeds: number;
+  strangerFriendly: number;
+  vocalisation: number;
+  experimental: number;
+  hairless: number;
+  natural: number;
+  rare: number;
+  rex: number;
+  suppressedTail: number;
+  shortLegs: number;
+  wikipediaUrl?: string;
+  hypoallergenic: number;
+  referenceImageId?: string;
+  image?: Image;
+  weight: Weight;
+}
