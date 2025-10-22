@@ -2,10 +2,9 @@ export default {
   preset: 'ts-jest/presets/default-esm',
   extensionsToTreatAsEsm: ['.ts'],
   testEnvironment: 'node',
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>'],
   testMatch: [
-    '**/__tests__/**/*.ts',
-    '**/?(*.)+(spec|test).ts'
+    '**/__tests__/**/*.test.ts'
   ],
   transform: {
     '^.+\\.ts$': ['ts-jest', {
@@ -26,15 +25,15 @@ export default {
     'lcov',
     'html'
   ],
-  moduleNameMapping: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@config/(.*)$': '<rootDir>/src/config/$1',
-    '^@common/(.*)$': '<rootDir>/src/common/$1',
-    '^@core/(.*)$': '<rootDir>/src/core/$1',
+  moduleNameMapper: {
+    '^@config/index\\.js$': '<rootDir>/src/config/index.ts',
     '^@application/(.*)$': '<rootDir>/src/application/$1',
+    '^@core/(.*)$': '<rootDir>/src/core/$1',
     '^@infrastructure/(.*)$': '<rootDir>/src/infrastructure/$1',
-    '^@presentation/(.*)$': '<rootDir>/src/presentation/$1'
+    '^@presentation/(.*)$': '<rootDir>/src/presentation/$1',
+    '^@config/(.*)$': '<rootDir>/src/config/$1',
+    '^@common/(.*)$': '<rootDir>/src/common/$1'
   },
-  setupFilesAfterEnv: ['<rootDir>/src/tests/setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/__tests__/setup.ts'],
   testTimeout: 30000
 };
